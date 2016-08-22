@@ -14,6 +14,7 @@ var configGenerator = (options) => {
       hca: './src/js/hca/hca-entry.jsx',
       'edu-benefits': './src/js/edu-benefits/edu-benefits-entry.jsx',
       'no-react': './src/js/no-react-entry.js',
+      'user-profile': './src/js/user-profile/user-profile-entry.jsx',
        rx: './src/js/rx/rx-entry.jsx',
     },
     output: {
