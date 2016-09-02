@@ -6,8 +6,7 @@ class SubmitButton extends React.Component {
       <button
           className={`usa-button-outline ${this.props.cssClass}`}
           type="submit"
-          value={this.props.value}
-          name="abc">{this.props.text}</button>
+          value={this.props.value}>{this.props.text}</button>
     );
   }
 }

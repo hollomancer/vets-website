@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 
 import { rxStatuses } from '../config.js';
 import RefillsRemainingCounter from './RefillsRemainingCounter';
@@ -9,6 +10,19 @@ import TrackPackageLink from './TrackPackageLink';
 import SubmitButton from './SubmitButton';
 
 class Prescription extends React.Component {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(domEvent) {
+    domEvent.preventDefault();
+    this.props.dispatch({
+      type: 'OPEN_REFILL_MODAL',
+      content: this.props.attributes
+    });
+  }
+
   render() {
     const attrs = this.props.attributes;
     const id = this.props.id;
@@ -49,9 +63,10 @@ class Prescription extends React.Component {
     }
 
     return (
-      <div className="rx-prescription"
+      <form className="rx-prescription"
+          id={`rx-${id}`}
           key={id}
-          id={`rx-${id}`}>
+          onSubmit={this.handleSubmit}>
         <div className="rx-prescription-inner cf">
           <h3 className="rx-prescription-title" title={name}>
             <Link to={`/rx/prescription/${id}`}>
@@ -75,7 +90,7 @@ class Prescription extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }
@@ -101,4 +116,9 @@ Prescription.propTypes = {
   }).isRequired
 };
 
-export default Prescription;
+// TODO: fill this out
+const mapStateToProps = (state) => {
+  return state;
+};
+
+export default connect(mapStateToProps)(Prescription);

@@ -49,7 +49,10 @@ class Active extends React.Component {
         label: 'Facility name' },
       { value: 'last-requested',
         label: 'Last requested' }];
-
+	/*
+    Passing the dispatch method through to PrescriptionList so
+    that we can dispatch events for each prescription.
+    */
     return (
       <div className="va-tab-content">
         <SortMenu
@@ -60,6 +63,7 @@ class Active extends React.Component {
         <PrintList
             type="active"/>
         <PrescriptionList
+            dispatch={this.props.dispatch}
             items={items}
             // If we're sorting by facility, tell PrescriptionList to group 'em.
             grouped={sortValue === 'facility-name'}/>
