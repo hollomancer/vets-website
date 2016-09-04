@@ -66,7 +66,7 @@ You may be eligible for both of these programs, but you can use only one of them
       <li><strong>Monthly Housing Allowance (paid to the student)</strong>:
       VA bases this allowance on local BAH for E-5 with dependents and pays it monthly. Online students receive half of the BAH national average.</li>
     </ul>
-    </td>
+    </td>
   </tr>
 
   <tr>
